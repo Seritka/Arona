@@ -1,1 +1,1 @@
-ampy --port COM4 put test.py /main.py
+ampy --port COM4 put gps.py /main.py
