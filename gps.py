@@ -6,7 +6,7 @@ import utime, time
 
 i2c=I2C(0,sda=Pin(0), scl=Pin(1), freq=400000)
 oled = SSD1306_I2C(128, 64, i2c)
-# https://dev.webonomic.nl/blinking-a-led-on-the-raspberry-pi-pico-w/comment-page-1
+# ref: https://dev.webonomic.nl/blinking-a-led-on-the-raspberry-pi-pico-w/comment-page-1
 led = machine.Pin("LED", Pin.OUT)
 gpsModule = UART(1, baudrate=9600, tx=Pin(4), rx=Pin(5))
 print(gpsModule)
@@ -25,7 +25,6 @@ GPStime = ""
 timer = Timer()
 
 def ledblink(timer):
-
     led.toggle()
 
 timer.init(freq=2.5, mode=Timer.PERIODIC, callback=ledblink)
