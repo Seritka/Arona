@@ -43,11 +43,11 @@ def getGPS(gpsModule):
             continue
         for i in string:
             mgps.update(i)
-        latitude = mgps.latitude_string()
-        longitude = mgps.longitude_string()
         if latitude == '0" 0.0\' M' or longitude == '0" 0.0\' W':
             TIMEOUT = True
             break
+        latitude = mgps.latitude_string()
+        longitude = mgps.longitude_string()
         satellites = str(mgps.satellites_in_use)
         GPStime = mgps.timestamp_string()
         
